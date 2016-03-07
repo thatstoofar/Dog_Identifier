@@ -1,0 +1,495 @@
+\documentclass[]{article}
+
+% Imported Packages
+%------------------------------------------------------------------------------
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{extarrows}
+\usepackage{setspace}
+%------------------------------------------------------------------------------
+
+% Header and Footer
+%------------------------------------------------------------------------------
+\pagestyle{plain}  
+\renewcommand\headrulewidth{0.4pt}                                      
+\renewcommand\footrulewidth{0.4pt}                                    
+%------------------------------------------------------------------------------
+
+% Title Details
+%------------------------------------------------------------------------------
+\title{SFWR ENG 3A04\\Deliverable \#1\\WhoDatDog\\ System Requirements Specification}
+\author{Jonathan Yu\\Samuel Jackson\\Bill Chen\\Fiona Hu\\Nikita Jagora}
+\date{}                               
+%------------------------------------------------------------------------------
+
+% Document
+%------------------------------------------------------------------------------
+\begin{document}
+
+\maketitle	
+
+\section{Introduction}
+\label{sec:introduction}
+% Begin Section
+\subsection{Purpose}
+
+The purpose of this SRS is to describe the intended purpose and environment of our system WhoDatDog for future developers and software design teams
+]. 
+
+
+\subsection{Scope}
+\label{sub:scope}
+% Begin SubSection
+The system application shall be called WhoDatDog, The software shall attempt to identify a dog through a description fed from the phone owners. As an additional feature, after the system has identified the dog it should allow the user to share the identified dog on twitter. Another additional feature is that the user should be given a list of the nearest pet stores for the type of dog identified. The benefits of this system is to be able to conveniently identify any type of dog with your phone. The objective of this system is to allow the user to identity a dog through a description on their mobile phone. Our goal is to create an simple and effective android application that can identify a dog. The relevant benefits of this system is the user now can identify a dog through automation, which is faster and more convenient then the traditional methods.   
+
+\subsection{Definitions, Acronyms, and Abbreviations}
+\label{sub:definitions_acronyms_and_abbreviations}
+% Begin SubSection
+\begin{enumerate}[a)]
+	\item \textbf{Android Device} - A device such as a smart phone or tablet that runs on an Android operating system.
+\end{enumerate}
+
+\subsection{Acronyms and Abbreviations}
+\begin{enumerate}[a)]
+	\item \textbf{WWD} - an acronym for WhoDatDog
+	\item \textbf{API} - an acronym for application program interface
+\end{enumerate}
+
+% End SubSection
+
+\subsection{References}
+N/A
+
+\subsection{Overview}
+\label{sub:overview}
+% Begin SubSection
+The rest of the document contains the overall description, functional requirements, and non functional requirements. The overall description of the system should describe the general factors that affect the WhoDatDog system and its requirements. The functional requirements section should contain the details for a designer to design the system. It is organized by first business events and then by viewpoints. The non functional requirements should contain the qualities our system wants. The SRS is organized sequentially from the sections mentioned above. 
+\section{Overall Description}
+\label{sec:overall_description}
+% Begin Section
+
+This section of the SRS should describe the general factors that affect the product and its requirements. It does not state specific requirements; it provides a background for those requirements and makes them easier to understand.
+
+\subsection{Product Perspective}
+\label{sub:product_perspective}
+% Begin SubSection
+WhoDatDog is an application that identifies the breed of a dog. Much like the application Dogsnap in the Appstore but instead of photo recognition the system will use a description of the dog input by the user.\\
+
+WhoDatDog in this SRS is an application that will be used on a larger Android system. The software therefore must be able to interact with the Android system's physical mechanisms.\\
+
+Also the application will have an interface that can be accessed by the user on an Android device.
+% End SubSection
+
+\subsection{Product Functions}
+\label{sub:product_functions}
+% Begin SubSection
+This subsection will describe the main functions the WhoDatDog apllication must have.
+
+\begin{itemize}
+	\item \textbf{Identify Dog:} the application shall give the user a list of all the dogs that match the characteristics inputted
+	\item \textbf{Social Media Post:} Using Google Maps API, the system shall make a post to the users social media platform about the dog that was identified and where the user was at the time
+	\item \textbf{Pet Store Locator:} Using Google Maps API, the system shall give the user a list of pet stores arranged by closest distance from the user
+	\item \textbf{Expert Swapping:} The application shall give the user the ability to ability to choose and/or swap which experts they would like to use at will
+\end{itemize}
+% End SubSection
+
+\subsection{User Characteristics}
+\label{sub:user_characteristics}
+% Begin SubSection
+The User must:
+\begin{itemize}
+	\item Understand how to use the interface of the Android device to access the Dog Identifier
+	\item Be able to read/understand English to interact with the interface
+\end{itemize}
+% End SubSection
+
+\subsection{Constraints}
+\label{sub:constraints}
+% Begin SubSection
+Time constraints are the main general constraints of the WhoDatDog system. There will be project dates for specific deliverables that the team must meet.
+% End SubSection
+
+\subsection{Assumptions and Dependencies}
+\label{sub:assumptions_and_dependencies}
+% Begin SubSection
+We are assuming that the user will have a working Android device that has WhoDatDog installed.
+% End SubSection
+
+\subsection{Apportioning of Requirements}
+\label{sub:apportioning_of_requirements}
+% Begin SubSection
+
+% End SubSection
+
+% End Section
+
+\section{Functional Requirements}
+\label{sec:functional_requirements}
+% Begin Section
+The following functional requirements are defined firstly by business event (BE1, BE2, ...), then by viewpoint (VP1, VP2, ...). The viewpoints identified in these functional requirements are defined as followed:
+\begin{itemize}
+	\item User (The person(s) who use the software program.)
+	\item Software developers 
+	\item Business owners (Individuals who own/manage pet stores, kennels, dog pounds, etc. businesses where a User may purchase or adopt a dog)
+\end{itemize}
+
+\begin{enumerate}[{BE}1.]
+	\item The user wants to identify the breed of a dog they have seen.
+	\begin{enumerate}[{VP1}.1]
+		\item Users
+		\begin{enumerate}
+			\item The system must be able to identify user input.
+			\item The system must contain or hold a database of dog breeds consisting of at least 3 "expert" subsystems, which will be used to identify the dog the user has seen.Each expert subsystem identifies one particular characteristic of a dog.
+			\item The system will use a “forum”, similar to a social networking system, in which the user will ask questions and to which the system will respond.
+			\item The system will respond to user’s text inputs with a text output of its’ own.
+		\end{enumerate}
+		\item Software Developers
+		\begin{enumerate}
+			\item The system will not require input from a developer in order for its’ identification system to be used.
+		\end{enumerate}
+		\item Business Owners\\(Not applicable)
+	\end{enumerate}
+	\item The user wants to find pet stores, etc. businesses nearby where they can purchase or adopt a dog.
+	\begin{enumerate}[{VP2}.1]
+		\item Users
+		\begin{enumerate}
+			\item The system will be able to use Google Maps integration to find the user’s geographic location, for the purpose of locating nearby businesses where the user may purchase a dog, within some specified distance from the user.
+		\end{enumerate}
+		\item Software Developers
+		\begin{enumerate}
+			\item The software must not intrude into users private information, and will not require personal information regardless.
+		\end{enumerate}
+		\item Business Owners
+		\begin{enumerate}
+			\item The system must be able to display nearby businesses to the user where the user may purchase/adopt a dog.
+			\item The system must be able to access information regarding the address of the businesses in question.
+		\end{enumerate}
+	\end{enumerate}
+	\item The user wants to create a social media post describing the dog they have identified and their current geographical location.
+	\begin{enumerate}[{VP3}.1]
+		\item Users
+		\begin{enumerate}
+			\item The system will be able to use Google Maps API to identify the user's current location.
+			\item The system will be able to connect to the social media service Twitter in order to make a post on the user's behalf.
+			\begin{enumerate}[{ii}.i]
+				\item The system will require the user's permission in order to make a social media post.
+				\item The system will be able to include textual information regarding the last dog breed identified by the user in the social media post.
+				\item The system will be able to attach a photograph to the social media post, if the user gives permission.
+				\item The user will be able to specify if their social media post is one describing a lost dog.
+			\end{enumerate}
+		\end{enumerate}
+		\item Software Developers
+		\begin{enumerate}
+			\item The system will not require additional permissions from the developers to work.
+		\end{enumerate}
+		\item Business Owners\\(Not applicable)
+	\end{enumerate}
+\end{enumerate}
+
+
+
+% End Section
+
+\section{Non-Functional Requirements}
+\label{sec:non-functional_requirements}
+% Begin Section
+\subsection{Look and Feel Requirements}
+\label{sub:look_and_feel_requirements}
+% Begin SubSection
+
+\subsubsection{Appearance Requirements}
+\label{ssub:appearance_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{LF}1. ]
+	\item The product shall have an attractive and intuitive UI that has a customer satisfaction rate of at least 80\%.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Style Requirements}
+\label{ssub:style_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{LF}2. ]
+	\item The product shall have a simple design to ensure usability a small learning curve for users in all age groups.
+\end{enumerate}
+% End SubSubSection
+
+% End SubSection
+
+\subsection{Usability and Humanity Requirements}
+\label{sub:usability_and_humanity_requirements}
+% Begin SubSection
+
+\subsubsection{Ease of Use Requirements}
+\label{ssub:ease_of_use_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{UH}1. ]
+	\item The product shall be easy for 10-year-old children to use.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Personalization and Internationalization Requirements}
+\label{ssub:personalization_and_internationalization_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{UH}2. ]
+	\item The product shall support English.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Learning Requirements}
+\label{ssub:learning_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{UH}3. ]
+	\item The product shall be easy for a smartphone user to learn. The users should not take longer than 5 minutes to become familiarized the application.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Understandability and Politeness Requirements}
+\label{ssub:understandability_and_politeness_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{UH}4. ]
+	\item The product shall not use or contain any offensive language.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Accessibility Requirements}
+\label{ssub:accessibility_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{UH}5. ]
+	\item The product shall be usable by at least 95\% of people with acceptable vision.
+\end{enumerate}
+% End SubSubSection
+
+% End SubSection
+
+\subsection{Performance Requirements}
+\label{sub:performance_requirements}
+% Begin SubSection
+
+\subsubsection{Speed and Latency Requirements}
+\label{ssub:speed_and_latency_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{PR}1. ]
+	\item Any interface between a user and the automated product must have a maximum response time of 2 seconds.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Safety-Critical Requirements}
+\label{ssub:safety_critical_requirements}
+N/A
+
+\subsubsection{Precision or Accuracy Requirements}
+\label{ssub:precision_or_accuracy_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{PR}2. ]
+	\item All numeric amounts must be accurate to 1 decimal place.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Reliability and Availability Requirements}
+\label{ssub:reliability_and_availability_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{PR}3. ]
+	\item The product shall be available for use 24 hours a day, 365 days a year unless under monthly maintenance.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Robustness or Fault-Tolerance Requirements}
+\label{ssub:robustness_or_fault_tolerance_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{PR}4. ]
+	\item The product shall keep and display the information user entered next time it's opened unless discarded by the user.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Capacity Requirements}
+\label{ssub:capacity_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{PR}5. ]
+	\item The product shall be able to accept 1 query at a time.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Scalability or Extensibility Requirements}
+\label{ssub:scalability_or_extensibility_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{PR}6. ]
+	\item The product shall be able to have more features when more time is invested in future developments.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Longevity Requirements}
+\label{ssub:longevity_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{PR}7. ]
+	\item The product shall be available to acquire and operate for at least 3 years.
+\end{enumerate}
+% End SubSubSection
+
+% End SubSection
+
+\subsection{Operational and Environmental Requirements}
+\label{sub:operational_and_environmental_requirements}
+% Begin SubSection
+
+\subsubsection{Expected Physical Environment}
+\label{ssub:expected_physical_environment}
+% Begin SubSubSection
+\begin{enumerate}[{OE}1. ]
+	\item The product will be running exclusively on smartphones with Android OS.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Requirements for Interfacing with Adjacent Systems}
+\label{ssub:requirements_for_interfacing_with_adjacent_systems}
+% Begin SubSubSection
+\begin{enumerate}[{OE}2. ]
+	\item The product shall receive an approval rate of at least 90\% from the online mapping API.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Productization Requirements}
+\label{ssub:productization_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{OE}3. ]
+	\item The product shall be uploaded onto the Google Play Store upon completion. It shall also be able to be downloaded and installed from the store.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Release Requirements}
+\label{ssub:release_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{OE}4. ]
+	\item The product shall be ready to release by the end of April 2016.
+\end{enumerate}
+% End SubSubSection
+
+% End SubSection
+
+\subsection{Maintainability and Support Requirements}
+\label{sub:maintainability_and_support_requirements}
+% Begin SubSection
+
+\subsubsection{Maintenance Requirements}
+\label{ssub:maintenance_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{MS}1. ]
+	\item The product shall be under a 1-hour maintenance at the end of each month.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Supportability Requirements}
+\label{ssub:supportability_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{MS}2. ]
+	\item The product shall have technical support for all its users.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Adaptability Requirements}
+\label{ssub:adaptability_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{MS}3. ]
+	\item The product shall be able to work in any Android based device without the need for additional programming.
+\end{enumerate}
+% End SubSubSection
+
+% End SubSection
+
+\subsection{Security Requirements}
+\label{sub:security_requirements}
+% Begin SubSection
+
+\subsubsection{Access Requirements}
+\label{ssub:access_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{SR}1. ]
+	\item The product shall be available for all Google Play Store users that meet the requirements to download.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Integrity Requirements}
+\label{ssub:integrity_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{SR}2. ]
+	\item The product must encrypt all transmitted messages.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Privacy Requirements}
+\label{ssub:privacy_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{SR}3. ]
+	\item The product shall not allow any unauthorized apps or users to access any information it holds.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Audit Requirements}
+\label{ssub:audit_requirements}
+N/A
+
+\subsubsection{Immunity Requirements}
+\label{ssub:immunity_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{SR}4. ]
+	\item The product shall place top priority on the protection of user information from infection by unauthorized malicious programs.
+\end{enumerate}
+% End SubSubSection
+
+% End SubSection
+
+\subsection{Cultural and Political Requirements}
+\label{sub:cultural_and_political_requirements}
+% Begin SubSection
+
+\subsubsection{Cultural Requirements}
+\label{ssub:cultural_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{CP}1. ]
+	\item The product shall not offend any user because of its name, colour, icon or UI.
+\end{enumerate}
+% End SubSubSection
+
+\subsubsection{Political Requirements}
+\label{ssub:political_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{CP}2. ]
+	\item The product shall not have any political affiliation or influence.
+\end{enumerate}
+% End SubSubSection
+
+% End SubSection
+
+\subsection{Legal Requirements}
+\label{sub:legal_requirements}
+% Begin SubSection
+
+\subsubsection{Compliance Requirements}
+\label{ssub:compliance_requirements}
+N/A
+
+\subsubsection{Standards Requirements}
+\label{ssub:standards_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{LR}1. ]
+	\item Personal information must be implemented such that it complies with the Data Protection Act.
+\end{enumerate}
+
+% End Section
+
+\appendix
+\section{Division of Labour}
+
+Jonathan Yu - Introduction \\
+Samuel Jackson - Overall Description \\Bill Chen and Nikita Jagora - Functional Requirements\\Fiona Hu - Non-Functional Requirements\\
+
+
+
+
+\end{document}
+%------------------------------------------------------------------------------
