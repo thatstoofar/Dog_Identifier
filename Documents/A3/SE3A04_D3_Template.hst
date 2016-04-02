@@ -1,0 +1,3 @@
+\def \vhCurrentVersion {1.1}
+\def \vhCurrentDate {3.25.16}
+\newsetsimple \vhAllAuthorsSet {Fiona Hu|Jonathan Yu|Nikita Jagora and Bill Chen|Sammy Jackson}

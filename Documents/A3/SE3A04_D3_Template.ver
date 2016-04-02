@@ -1,0 +1,22 @@
+\begin {longtable}{@{}ll>{\hsize =\vhAuthorColWidth }X>{\hsize =\vhChangeColWidth }X@{}}
+\textbf {\vhversionname }
+ & \textbf {\vhdatename }
+ & \textbf {\vhauthorname }
+ & \textbf {\vhchangename }\\[1ex]
+1.0
+ & 3.25.16
+ & \listset {Jonathan Yu}
+ & completely redid introduction, updated correct purpose and intended audience. Added benefits and goals \\
+1.1
+ & 3.25.16
+ & \listset {Fiona Hu}
+ & Removed ambiguous sentences\\
+1.2
+ & 3.25.16
+ & \listset {Nikita Jagora and Bill Chen}
+ & Corrected BE's, removed unnecessary view points such as Dog Owners, Requirements now to the point \\
+1.1
+ & 3.25.16
+ & \listset {Sammy Jackson}
+ & Introduces tool name\\
+\end {longtable}

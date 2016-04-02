@@ -1,0 +1,19 @@
+Global Pet Foods 	"119 Osler Dr, Dundas, ON L9H 6X4"	43.25761	-79.941252
+Global Pet Foods 	"2A-50 Dundurn St S, Hamilton, ON L8P 4W3"	43.261503	-79.889679
+Pet Value	"86-94 Main St, Dundas, ON L9H 2R1"	43.262734	-79.952582
+Pet Value	"801 Mohawk Rd W, Hamilton, ON L9C 6C2 "	43.232987	-79.922942
+Dundas Valley Groomers	"249 King St W, Dundas, ON L9H 1V8"	43.26851	-79.96523
+The Urban Zoo	"622 Upper James St, Hamilton, ON L9C 2Z1"	43.238149	-79.877597
+Pet Valu	"1 Wilson St, Hamilton, ON L8R 1C4"	43.259425	-79.867083
+Live Right Pet Supplies	"203B Main St E, Hamilton, ON L8N 1H2"	43.25358	-79.861373
+Ruffin Pet Center	"581 Main St E, Hamilton, ON L8M 1H9"	43.249893	-79.847485
+Global Pet Foods 	"1400 Upper James St, Hamilton, ON L9B 1K3"	43.2096	-79.891001
+Noah Ark Pet & Supplies	"835 King St E, Hamilton, ON L8M 1B1"	43.251627	-79.841812
+Glanbrook Veterinary Services	"2273 Upper James St RR 1, Mount Hope, ON L0R 1W0"	43.182177	-79.902419
+Pet Max Warehouse Outlet	"45 Nebo Road, Hamilton, ON L8W 2C9"	43.196296	-79.835106
+Harvest Blend Pet Nutrition	"1621 Main St E, Hamilton, ON L8H 1C4"	43.238187	-79.800757
+Paulmac Pet Foods	"1565 Barton St E, Hamilton, ON L8H 2Y3"	43.247592	-79.795286
+Big Al	"140 Centennial Pky N, Hamilton, ON L8E 1H9"	43.233076	-79.760928
+Woof Alternative Dog Training	"309-25 Mountain Ave N, Stoney Creek, ON L8G 3N8"	43.218637	-79.755838
+PJ Pets	"2176 Rymal Rd E, Hamilton, ON L0R 1P0"	43.174631	-79.78514
+Armstrongs Pet & Garden Centre	"2400 Hwy 56, Binbrook, ON L0R 1C0"	43.129735	-79.800794
