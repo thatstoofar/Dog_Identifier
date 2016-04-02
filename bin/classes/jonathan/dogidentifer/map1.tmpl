@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Pet Stores</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+	  #legend {
+		background: white;
+		padding: 10px;
+	  }
+	  </style>
+	  	<script>
+	function getZoomByBounds( map, bounds, width, height ){
+	  var MAX_ZOOM = map.mapTypes.get( map.getMapTypeId() ).maxZoom || 21 ;
+	  var MIN_ZOOM = map.mapTypes.get( map.getMapTypeId() ).minZoom || 0 ;
+
+	  var ne= map.getProjection().fromLatLngToPoint( bounds.getNorthEast() );
+	  var sw= map.getProjection().fromLatLngToPoint( bounds.getSouthWest() ); 
+
+	  var worldCoordWidth = Math.abs(ne.x-sw.x);
+	  var worldCoordHeight = Math.abs(ne.y-sw.y);
+
+	  //Fit padding in pixels 
+	  var FIT_PAD = 40;
+
+	  for( var zoom = MAX_ZOOM; zoom >= MIN_ZOOM; --zoom ){ 
+		  if( worldCoordWidth*(1<<zoom)+2*FIT_PAD < width && 
+			  worldCoordHeight*(1<<zoom)+2*FIT_PAD < height )
+			  return zoom;
+	  }
+	  return 0;
+	}
+	function setZoom() {
+		var mapdiv = document.getElementById("map");
+		var width = mapdiv.offsetWidth;
+		var height = mapdiv.offsetHeight;
+		
+		var sw = {$SW};
+		var ne = {$NE};
+		var bounds = new google.maps.LatLngBounds(sw, ne);
+		var zoom = getZoomByBounds(map, bounds, width, height);
+		map.setZoom(zoom);
+		map.setCenter(bounds.getCenter());
+	}
+	
+	</script>
+
+  </head>
+  <body onload="setZoom()">
+    <div id="map"></div>
+	<div id="legend">
+	$LOCATION
+	</div>
+    <script>
+	var map;
+	function initMap() {
+
+		map = new google.maps.Map(document.getElementById('map'), {
+			mapTypeId: google.maps.MapTypeId.TERRAIN
+	 	});
+		var lineSymbol = {
+			path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
+		};
+
+	 
+	 $EVENT
+	 
+	}
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCc5saHa9RX85sBK2x5uUtO91i3qsh5iSA&signed_in=true&callback=initMap"></script>
+  </body>
+</html>
